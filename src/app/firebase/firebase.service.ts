@@ -13,4 +13,8 @@ export class FirebaseService {
   public getAlDevices (): Observable<any> {
     return this.af.database.list('devices');
   }
+
+  public setDeviceState (key: string, state: boolean): void {
+    this.af.database.object(`devices/${key}`).update({ state: state, updated: true });
+  }
 }

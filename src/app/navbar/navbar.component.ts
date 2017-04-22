@@ -13,9 +13,6 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.firebaseServie.getAlDevices().subscribe(devices => {
-      console.log('devices', devices);
-    });
   }
 
 }

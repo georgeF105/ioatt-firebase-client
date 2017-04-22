@@ -2,9 +2,15 @@
   class="device-card">
   <h1>{{device.name}}</h1>
   <button
-    *ngIf="device.state" 
+    *ngIf="device.state"
+    [ngClass]="{'loading-button': device.updated}"
+    (click)="toggleDeviceState()"
+    color="primary"    
     md-fab><md-icon>check</md-icon></button>
   <button
     *ngIf="!device.state"
+    [ngClass]="{'loading-button': device.updated}"    
+    (click)="toggleDeviceState()"
+    color="warn"
     md-fab><md-icon>close</md-icon></button>
 </md-card>
