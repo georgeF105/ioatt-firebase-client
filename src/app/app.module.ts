@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MdButtonModule } from '@angular/material';
 import { NavbarModule } from 'app/navbar/navbar.module';
+import { FirebaseModule } from 'app/firebase/firebase.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarModule } from 'app/navbar/navbar.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     NavbarModule,
-    MdButtonModule
+    MdButtonModule,
+    FirebaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

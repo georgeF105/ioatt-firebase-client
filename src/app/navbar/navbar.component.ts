@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'app/firebase/firebase.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private firebaseServie: FirebaseService
+  ) { }
 
   ngOnInit() {
+    this.firebaseServie.getAlDevices().subscribe(devices => {
+      console.log('devices', devices);
+    });
   }
 
 }
