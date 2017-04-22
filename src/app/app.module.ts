@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MdButtonModule } from '@angular/material';
+import { NavbarModule } from 'app/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MdButtonModule } from '@angular/material';
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NavbarModule,
     MdButtonModule
   ],
   providers: [],
