@@ -1,3 +1,13 @@
-<md-toolbar>
-  navbar works!
+<md-toolbar
+  class="navbar">
+  <span>Home Control</span>
+  <span class="spacer"></span>
+  <button
+    *ngIf="!(user$ | async)"
+    md-button
+    (click)="logIn()">LogIn</button>
+  <button
+    *ngIf="user$ | async"
+    md-button
+    (click)="logOut()">{{(user$ | async)?.name}}</button>
 </md-toolbar>
