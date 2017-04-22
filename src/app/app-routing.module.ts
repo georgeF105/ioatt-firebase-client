@@ -4,7 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    children: []
+    children: [
+      {
+        path: 'devices',
+        loadChildren: 'app/devices/devices.module#DevicesModule'
+      }
+    ]
   }
 ];
 
