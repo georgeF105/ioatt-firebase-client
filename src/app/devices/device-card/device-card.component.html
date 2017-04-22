@@ -1,3 +1,10 @@
-<h1>
-  {{device.name}}
-</h1>
+<md-card
+  class="device-card">
+  <h1>{{device.name}}</h1>
+  <button
+    *ngIf="device.state" 
+    md-fab><md-icon>check</md-icon></button>
+  <button
+    *ngIf="!device.state"
+    md-fab><md-icon>close</md-icon></button>
+</md-card>
