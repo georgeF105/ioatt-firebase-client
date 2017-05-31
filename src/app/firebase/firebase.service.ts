@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class FirebaseService {
   public user$ = new BehaviorSubject(null);
 
   constructor(
-    private af: AngularFire
+    private angularFireDatabase: AngularFireDatabase,
+    private angularFireAuth: AngularFireAuth
   ) {
-    af.auth.subscribe(auth => {
+    angularFireAuth.authState.subscribe(auth => {
       if (auth) {
         this.user$.next({
           id: auth.uid,
-          name: auth.google.displayName || auth.google.email
+          name: auth.displayName || auth.email
         });
       } else {
         this.user$.next(null);
@@ -23,18 +26,18 @@ export class FirebaseService {
   }
 
   public getAlDevices (): Observable<any> {
-    return this.af.database.list('devices');
+    return this.angularFireDatabase.list('devices');
   }
 
   public setDeviceState (key: string, state: boolean): void {
-    this.af.database.object(`devices/${key}`).update({ state: state, updated: true });
+    this.angularFireDatabase.object(`devices/${key}`).update({ state: state, updated: true });
   }
 
   public logIn(): void {
-    this.af.auth.login();
+    this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   public logOut(): void {
-    this.af.auth.logout();
+    this.angularFireAuth.auth.signOut();
   }
 }
