@@ -30,7 +30,7 @@ export class FirebaseService {
   }
 
   public setDeviceState (key: string, state: boolean): void {
-    this.angularFireDatabase.object(`devices/${key}`).update({ state: state, updated: true });
+    this.angularFireDatabase.object(`devices/${key}`).update({ state: state, updatedByHost: true, updatedByDevice: false });
   }
 
   public logIn(): void {
