@@ -7,20 +7,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../../environments/environment';
 
-// export const firebaseConfig = {
-//   apiKey: 'AIzaSyBuVD5OXCSQiHmhB_MENyY-en2YVrm9mbc',
-//   authDomain: 'angle-control.firebaseapp.com',
-//   databaseURL: 'https://angle-control.firebaseio.com',
-//   projectId: 'angle-control',
-//   storageBucket: 'angle-control.appspot.com',
-//   messagingSenderId: '991417158966'
-// };
-
-// const firebaseAuthConfig = {
-//   provider: AuthProviders.Google,
-//   method: AuthMethods.Popup
-// };
-
 @NgModule({
   imports: [
     CommonModule,
