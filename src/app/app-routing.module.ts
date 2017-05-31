@@ -3,13 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    children: [
-      {
-        path: 'devices',
-        loadChildren: 'app/devices/devices.module#DevicesModule'
-      }
-    ]
+    path: 'devices',
+    loadChildren: 'app/devices/devices.module#DevicesModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'devices'
   }
 ];
 
