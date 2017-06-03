@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { DevicesService } from '../devices.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-all-devices',
-  templateUrl: './all-devices.component.html',
-  styleUrls: ['./all-devices.component.scss']
+  selector: 'app-devices-list',
+  templateUrl: './devices-list.component.html',
+  styleUrls: ['./devices-list.component.scss']
 })
-export class AllDevicesComponent implements OnInit {
+export class DevicesListComponent implements OnInit {
   public devices$: Observable<any>;
 
   constructor(
