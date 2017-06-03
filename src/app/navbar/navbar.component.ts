@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'app/firebase/firebase.service';
 import { Observable } from 'rxjs/Observable';
+import { UserService } from '../core/user/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,18 +12,18 @@ export class NavbarComponent implements OnInit {
   public user$: Observable<any>;
 
   constructor(
-    private firebaseServie: FirebaseService
+    private userService: UserService
   ) { }
 
   ngOnInit() {
-    this.user$ = this.firebaseServie.user$;
+    this.user$ = this.userService.getUser();
   }
 
   public logIn(): void {
-    this.firebaseServie.logIn();
+    this.userService.logIn();
   }
 
   public logOut(): void {
-    this.firebaseServie.logOut();
+    this.userService.logOut();
   }
 }

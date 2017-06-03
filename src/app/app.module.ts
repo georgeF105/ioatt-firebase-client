@@ -9,7 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MdButtonModule } from '@angular/material';
 import { NavbarModule } from 'app/navbar/navbar.module';
+
 import { FirebaseModule } from 'app/firebase/firebase.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { UserService } from './core/user/user.service';
+import { FirebaseService } from './firebase/firebase.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +30,14 @@ import { FirebaseModule } from 'app/firebase/firebase.module';
     BrowserAnimationsModule,
     NavbarModule,
     MdButtonModule,
-    FirebaseModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    FirebaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
