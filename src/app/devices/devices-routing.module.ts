@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DevicesComponent } from 'app/devices/devices.component';
-import { AllDevicesComponent } from 'app/devices/all-devices/all-devices.component';
+import { DevicesListComponent } from 'app/devices/devices-list/devices-list.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AllDevicesComponent
+        component: DevicesListComponent
       }
     ]
   }
