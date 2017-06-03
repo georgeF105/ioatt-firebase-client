@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FirebaseService } from 'app/firebase/firebase.service';
+import { DevicesService } from '../devices.service';
 
 @Component({
   selector: 'app-device-card',
@@ -10,14 +10,14 @@ export class DeviceCardComponent implements OnInit {
   @Input() device;
 
   constructor(
-    private firebaseService: FirebaseService
+    private devicesService: DevicesService
   ) { }
 
   ngOnInit() {
   }
 
   public toggleDeviceState(): void {
-    this.firebaseService.setDeviceState(this.device.$key, !this.device.state);
+    this.devicesService.setDeviceState(this.device.$key, !this.device.state);
   }
 
 }

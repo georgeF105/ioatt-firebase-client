@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { FirebaseService } from 'app/firebase/firebase.service';
+import { DevicesService } from '../devices.service';
 
 @Component({
   selector: 'app-all-devices',
@@ -11,11 +11,11 @@ export class AllDevicesComponent implements OnInit {
   public devices$: Observable<any>;
 
   constructor(
-    private firebaseService: FirebaseService
+    private devicesService: DevicesService
   ) { }
 
   ngOnInit() {
-    this.devices$ = this.firebaseService.getAlDevices();
+    this.devices$ = this.devicesService.getAlDevices();
   }
 
 }

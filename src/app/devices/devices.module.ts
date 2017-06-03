@@ -6,6 +6,7 @@ import { AllDevicesComponent } from './all-devices/all-devices.component';
 import { DevicesComponent } from './devices.component';
 import { DeviceCardComponent } from './device-card/device-card.component';
 import { MaterialModule } from '@angular/material';
+import { DevicesService } from './devices.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,11 @@ import { MaterialModule } from '@angular/material';
     DevicesRoutingModule,
     MaterialModule
   ],
-  declarations: [AllDevicesComponent, DevicesComponent, DeviceCardComponent]
+  declarations: [
+    AllDevicesComponent,
+    DevicesComponent,
+    DeviceCardComponent
+  ],
+  providers: [DevicesService]
 })
 export class DevicesModule { }
