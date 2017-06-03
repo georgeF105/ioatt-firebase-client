@@ -1,5 +1,3 @@
-import { ISharedAccessLevel } from './ISharedAccessLevel';
-
 export interface IRawDevice {
   id: string;
   name: string;
@@ -7,5 +5,4 @@ export interface IRawDevice {
   updatedByDevice: boolean;
   updatedByHost: boolean;
   owner: string;
-  sharedWith: ISharedAccessLevel[];
 }

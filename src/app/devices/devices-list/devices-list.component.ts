@@ -19,4 +19,7 @@ export class DevicesListComponent implements OnInit {
     this.devices$ = this.devicesService.getAlDevices();
   }
 
+  private trackById(index, item) {
+    return item.id;
+  }
 }

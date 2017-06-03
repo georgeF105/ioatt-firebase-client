@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { UserService } from './core/user/user.service';
+import { ToggleButtonComponent } from './core/toggle-button/toggle-button.component';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,59 @@
+button {
+  margin: 10px;
+  box-shadow: none;
+}
+
+.button-border {
+  border-radius: 50%;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.button-is-on {
+  // background-color: rgba(81, 203, 238, 1);
+  // -webkit-transition: all 0.30s ease-in-out;
+  // -moz-transition: all 0.30s ease-in-out;
+  // -ms-transition: all 0.30s ease-in-out;
+  // -o-transition: all 0.30s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: inset 0 0 10px 5px rgba(81, 203, 238, 1);
+}
+
+.button-is-off {
+
+}
+
+.button-is-turning-off {
+  // button {
+  //   transition: box-shadow 0.5s ease-in-out;
+  //   box-shadow: 0 0 10px 5px red;
+  // }
+  // animation:spin 4s linear infinite;
+  // animation: glow 800ms ease-out infinite alternate;
+  // box-shadow: inset 10px 0 10px 5px rgba(81, 203, 238, 1);
+  animation: glow 2s ease-in infinite;
+}
+
+.button-is-turning-on {
+  // button {
+  //   transition: box-shadow 0.5s ease-in-out;
+  //   box-shadow: 0 0 10px 5px red;
+  // }
+  
+  animation: glow 2s ease-in-out infinite reverse;
+}
+
+.button-error {
+  button {
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow: 0 0 10px 5px red;
+  }
+}
+
+@keyframes glow {
+    0% {
+  		box-shadow: inset 0 0 10px 5px rgba(81, 203, 238, 1);
+    }	
+    100% {
+		  box-shadow: inset 0 0 5px 1px rgba(81, 203, 238, 1);
+    }
+}
