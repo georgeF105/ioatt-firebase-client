@@ -10,10 +10,10 @@ var functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
-exports.fetchSensorData = functions.database.ref('/sensors/{pushId}/update')
-    .onWrite(event => {
-      const update = event.data.val();
-      console.log('updating', event.params.pushId);
-      const temp = 21;
-      return event.data.ref.parent.child('temperature').set(temp);
-    });
+// exports.fetchSensorData = functions.database.ref('/sensors/{pushId}/update')
+//     .onWrite(event => {
+//       const update = event.data.val();
+//       console.log('updating', event.params.pushId);
+//       const temp = 21;
+//       return event.data.ref.parent.child('temperature').set(temp);
+//     });
