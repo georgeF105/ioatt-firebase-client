@@ -1,7 +1,11 @@
 <md-card
   class="device-card">
   <h1>{{device.name}}</h1>
-  <button
+  <app-toggle-button
+    [selected]="device.state"
+    [deviceInSync]="!device.updatedByHost"
+    (onSelectedChange)="setDeviceState($event)"></app-toggle-button>
+  <!--<button
     *ngIf="device.state"
     [ngClass]="{'loading-button': device.updated}"
     (click)="toggleDeviceState()"
@@ -12,5 +16,5 @@
     [ngClass]="{'loading-button': device.updated}"    
     (click)="toggleDeviceState()"
     color="warn"
-    md-fab><md-icon>close</md-icon></button>
+    md-fab><md-icon>close</md-icon></button>-->
 </md-card>
