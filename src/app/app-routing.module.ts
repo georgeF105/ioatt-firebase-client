@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: 'app/devices/devices.module#DevicesModule'
   },
   {
+    path: 'rules',
+    loadChildren: 'app/rules/rules.module#RulesModule'
+  },
+  {
     path: '**',
     redirectTo: 'devices'
   }
