@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RulesRoutingModule } from './rules-routing.module';
-import { RulesListComponent } from './rules-list/rules-list.component';
 import { RulesService } from './rules.service';
+import { RulesListModule } from './rules-list/rules-list.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RulesRoutingModule
+    RulesRoutingModule,
+    RulesListModule
   ],
-  declarations: [RulesListComponent],
   providers: [RulesService]
 })
 export class RulesModule { }
