@@ -3,8 +3,15 @@
     <md-card-title>{{rule.name}}</md-card-title>
   </md-card-header>
   <md-card-content>
-    <p>
-      All the rule conditions
-    </p>
+    <md-card
+      *ngFor="let condition of rule.conditions">
+      <md-card-header>
+        <md-card-title>{{condition | json}}
+          <md-icon
+            *ngIf="condition.type == 'time'"
+            svgIcon="thumbs-up"></md-icon>
+        </md-card-title>
+      </md-card-header>
+    </md-card>
   </md-card-content>
 </md-card>
