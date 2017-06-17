@@ -1,30 +1,31 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>
-      Time
-    </md-card-title>
-    <md-card-subtitle>{{condition.logicOperator}}</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-    <md-input-container class="value-input-wrapper"
-      color="warn">
-      <input
-        class="value-input"
-        mdInput
-        [(ngModel)]="condition.startTime"
-        (ngModelChange)="onChange()"
-        type="time"
-        placeholder="start time">
-    </md-input-container>
-    <md-input-container class="value-input-wrapper"
-      color="warn">
-      <input
-        class="value-input"
-        mdInput
-        [(ngModel)]="condition.endTime"
-        (ngModelChange)="onChange()"
-        type="time"
-        placeholder="end time">
-    </md-input-container>
-  </md-card-content>
-</md-card>
+<div
+  class="time-conditon">
+  <button
+    class="logic-button"
+    md-mini-fab>{{condition.logicOperator}}</button>
+  <md-card>
+    <md-card-content>
+      <md-icon>access_time</md-icon>      
+      <md-input-container class="value-input-wrapper"
+        color="warn">
+        <input
+          class="value-input"
+          mdInput
+          [(ngModel)]="condition.startTime"
+          (ngModelChange)="onChange()"
+          type="time"
+          placeholder="start time">
+      </md-input-container>
+      <md-input-container class="value-input-wrapper"
+        color="warn">
+        <input
+          class="value-input"
+          mdInput
+          [(ngModel)]="condition.endTime"
+          (ngModelChange)="onChange()"
+          type="time"
+          placeholder="end time">
+      </md-input-container>
+    </md-card-content>
+  </md-card>
+</div>

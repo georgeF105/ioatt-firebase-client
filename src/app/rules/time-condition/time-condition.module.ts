@@ -5,6 +5,7 @@ import { TimeConditionComponent } from './time-condition.component';
 import { MdCardModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
+import { MdButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MdInputModule } from '@angular/material';
     FormsModule,
     MdCardModule,
     MdIconModule,
-    MdInputModule
+    MdInputModule,
+    MdButtonModule
   ],
   declarations: [TimeConditionComponent],
   exports: [TimeConditionComponent]
