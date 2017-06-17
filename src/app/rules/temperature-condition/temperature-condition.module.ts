@@ -1,0 +1,24 @@
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TemperatureConditionComponent } from './temperature-condition.component';
+import { MdCardModule } from '@angular/material';
+import { MdIconModule } from '@angular/material';
+import { MdInputModule } from '@angular/material';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    MdCardModule,
+    MdIconModule,
+    MdInputModule
+  ],
+  declarations: [
+    TemperatureConditionComponent
+  ],
+  exports: [
+    TemperatureConditionComponent
+  ]
+})
+export class TemperatureConditionModule { }

@@ -1,0 +1,25 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      Temperature
+    </md-card-title>
+    <md-card-subtitle>{{condition.logicOperator}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <md-input-container class="value-input-wrapper"
+      color="warn">
+      <input
+        class="value-input"
+        mdInput
+        [(ngModel)]="condition.value"
+        (ngModelChange)="saveCondition()"
+        type="number"
+        min="0"
+        max="25"
+        step="0.5"
+        MdSuffix="&deg;C">
+      <label
+        mdSuffix>C</label>
+    </md-input-container>
+  </md-card-content>
+</md-card>
