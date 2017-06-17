@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { ITemperatureRuleCondition } from 'app/models';
+import { MdIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-temperature-condition',
@@ -11,10 +13,16 @@ export class TemperatureConditionComponent implements OnInit {
   @Input() public condition: ITemperatureRuleCondition;
   @Output() public saveCondition = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private iconRegistry: MdIconRegistry,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit() {
     console.log('Initing', this.condition);
+    this.iconRegistry.addSvgIcon(
+        'thermometer',
+        this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/thermometer.svg'));
   }
 
   public onChange () {
