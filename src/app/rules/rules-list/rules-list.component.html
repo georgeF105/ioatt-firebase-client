@@ -1,3 +1,3 @@
 <app-rule-card
-  *ngFor="let rule of rules$ | async"
+  *ngFor="let rule of rules$ | async; trackBy: trackByKey"
   [rule]=rule></app-rule-card>

@@ -18,4 +18,7 @@ export class RulesListComponent implements OnInit {
     this.rules$ = this.rulesService.getRules();
   }
 
+  public trackByKey(index, item) {
+    return item.$key;
+  }
 }

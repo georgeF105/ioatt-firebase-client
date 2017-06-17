@@ -15,6 +15,7 @@ export class RuleDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('HERE???????');
   }
 
   public saveRule (): void {
@@ -23,7 +24,6 @@ export class RuleDetailComponent implements OnInit {
   }
 
   public trackByKey (index, item) {
-    // TODO make this work
-    return item.type;
+    return index;
   }
 }
