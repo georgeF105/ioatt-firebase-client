@@ -7,7 +7,7 @@
   </md-card-header>
   <md-card-content>
     <ng-container
-      *ngFor="let condition of rule.conditions">
+      *ngFor="let condition of rule.conditions; trackBy: trackByKey">
       <app-temperature-condition
         *ngIf="condition.type === 'temperature'"
         [condition]="condition"

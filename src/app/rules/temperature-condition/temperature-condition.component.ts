@@ -14,6 +14,7 @@ export class TemperatureConditionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('Initing', this.condition);
   }
 
   public onChange () {
