@@ -5,12 +5,14 @@ import { MdCardModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { TemperatureConditionModule } from 'app/rules/temperature-condition/temperature-condition.module';
 import { TimeConditionModule } from 'app/rules/time-condition/time-condition.module';
+import { WeekDayConditionModule } from 'app/rules/week-day-condition/week-day-condition.module';
 
 @NgModule({
   imports: [
     CommonModule,
     TemperatureConditionModule,
     TimeConditionModule,
+    WeekDayConditionModule,
     MdCardModule,
     MdIconModule
   ],

@@ -20,6 +20,10 @@
           *ngSwitchCase="'time'"
           [condition]="condition"
           (saveCondition)="saveRule()"></app-time-condition>
+        <app-week-day-condition
+          *ngSwitchCase="'weekDay'"
+          [condition]="condition"
+          (saveCondition)="saveRule()"></app-week-day-condition>
       </div>
     </ng-container>
   </md-card-content>

@@ -6,18 +6,11 @@ import { ITimeRuleCondition } from 'app/models';
   templateUrl: './time-condition.component.html',
   styleUrls: ['./time-condition.component.scss']
 })
-export class TimeConditionComponent implements OnInit {
+export class TimeConditionComponent {
   @Input() public condition: ITimeRuleCondition;
   @Output() public saveCondition = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
-    console.log('Initing', this.condition);
-  }
-
   public onChange () {
-    console.log('saving');
     this.saveCondition.emit();
   }
 }

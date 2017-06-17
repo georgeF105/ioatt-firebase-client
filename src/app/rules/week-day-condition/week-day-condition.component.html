@@ -1,0 +1,34 @@
+<div
+  class="week-day-conditon">
+  <ng-container
+    [ngSwitch]="condition.logicOperator">
+    <button
+      *ngSwitchCase="'and'"
+      class="logic-button"
+      md-mini-fab
+      mdTooltip="And"
+      mdTooltipPosition="above"><md-icon>add</md-icon></button>
+    <button
+      *ngSwitchCase="'xand'"
+      class="logic-button"
+      md-mini-fab
+      mdTooltip="Not And"
+      mdTooltipPosition="above"><md-icon>remove</md-icon></button>
+  </ng-container>
+  <md-card>
+    <md-card-content>
+      <md-icon>date_range</md-icon>      
+      <md-button-toggle-group
+        class="value-input-wrapper"
+        multiple>
+        <md-button-toggle [value]="condition.monday" [checked]="condition.monday" (change)="toggleDay('monday')">M</md-button-toggle>
+        <md-button-toggle [value]="condition.tuesday" [checked]="condition.tuesday" (change)="toggleDay('tuesday')">Tu</md-button-toggle>
+        <md-button-toggle [value]="condition.wednesday" [checked]="condition.wednesday" (change)="toggleDay('wednesday')">W</md-button-toggle>
+        <md-button-toggle [value]="condition.thursday" [checked]="condition.thursday" (change)="toggleDay('thursday')">Th</md-button-toggle>
+        <md-button-toggle [value]="condition.friday" [checked]="condition.friday" (change)="toggleDay('friday')">F</md-button-toggle>
+        <md-button-toggle [value]="condition.saturday" [checked]="condition.saturday" (change)="toggleDay('saturday')">Sa</md-button-toggle>
+        <md-button-toggle [value]="condition.sunday" [checked]="condition.sunday" (change)="toggleDay('sunday')">Su</md-button-toggle>
+      </md-button-toggle-group>
+    </md-card-content>
+  </md-card>
+</div>
