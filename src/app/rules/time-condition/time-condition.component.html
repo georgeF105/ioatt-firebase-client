@@ -1,7 +1,7 @@
 <md-card>
   <md-card-header>
     <md-card-title>
-      Temperature
+      Time
     </md-card-title>
     <md-card-subtitle>{{condition.logicOperator}}</md-card-subtitle>
   </md-card-header>
@@ -11,14 +11,20 @@
       <input
         class="value-input"
         mdInput
-        [(ngModel)]="condition.value"
+        [(ngModel)]="condition.startTime"
         (ngModelChange)="onChange()"
-        type="number"
-        min="0"
-        max="25"
-        step="0.5">
-      <label
-        mdSuffix>&deg;C</label>
+        type="time"
+        placeholder="start time">
+    </md-input-container>
+    <md-input-container class="value-input-wrapper"
+      color="warn">
+      <input
+        class="value-input"
+        mdInput
+        [(ngModel)]="condition.endTime"
+        (ngModelChange)="onChange()"
+        type="time"
+        placeholder="end time">
     </md-input-container>
   </md-card-content>
 </md-card>

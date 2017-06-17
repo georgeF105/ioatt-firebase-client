@@ -7,12 +7,20 @@
   </md-card-header>
   <md-card-content>
     <ng-container
-      *ngFor="let condition of rule.conditions; trackBy: trackByKey">
-      <app-temperature-condition
-        *ngIf="condition.type === 'temperature'"
-        [condition]="condition"
-        (saveCondition)="saveRule()">
-      </app-temperature-condition>
+      *ngFor="let condition of rule.conditions; trackBy: trackByKey; last as isLast">
+      <div
+        [ngSwitch]="condition.type"
+        [class.bottom-margin]="!isLast">
+        <app-temperature-condition
+          *ngSwitchCase="'temperature'"
+          [condition]="condition"
+          (saveCondition)="saveRule()">
+        </app-temperature-condition>
+        <app-time-condition
+          *ngSwitchCase="'time'"
+          [condition]="condition"
+          (saveCondition)="saveRule()"></app-time-condition>
+      </div>
     </ng-container>
   </md-card-content>
 </md-card>
