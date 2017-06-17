@@ -6,12 +6,19 @@
     <md-card
       *ngFor="let condition of rule.conditions">
       <md-card-header>
-        <md-card-title>{{condition | json}}
-          <md-icon
-            *ngIf="condition.type == 'time'"
-            svgIcon="thumbs-up"></md-icon>
+        <md-card-title>
+          {{condition.type}}
         </md-card-title>
+        <md-card-subtitle>{{condition.logicOperator}}</md-card-subtitle>
       </md-card-header>
+      <md-card-content
+        *ngIf="condition.type === 'time'">
+        <h3>{{condition.startTime  + ' - ' + condition.endTime}}</h3>
+      </md-card-content>
+      <md-card-content
+        *ngIf="condition.type === 'temperature'">
+        <h3>{{condition.value}}</h3>
+      </md-card-content>
     </md-card>
   </md-card-content>
 </md-card>
