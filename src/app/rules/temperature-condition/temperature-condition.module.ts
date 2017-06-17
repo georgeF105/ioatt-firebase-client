@@ -6,6 +6,7 @@ import { MdCardModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
+import { MdTooltipModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { MdButtonModule } from '@angular/material';
     MdCardModule,
     MdIconModule,
     MdInputModule,
-    MdButtonModule
+    MdButtonModule,
+    MdTooltipModule
   ],
   declarations: [
     TemperatureConditionComponent

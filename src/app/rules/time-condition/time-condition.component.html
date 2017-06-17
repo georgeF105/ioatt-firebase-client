@@ -1,8 +1,20 @@
 <div
   class="time-conditon">
-  <button
-    class="logic-button"
-    md-mini-fab>{{condition.logicOperator}}</button>
+  <ng-container
+    [ngSwitch]="condition.logicOperator">
+    <button
+      *ngSwitchCase="'and'"
+      class="logic-button"
+      md-mini-fab
+      mdTooltip="And"
+      mdTooltipPosition="above"><md-icon>add</md-icon></button>
+    <button
+      *ngSwitchCase="'xand'"
+      class="logic-button"
+      md-mini-fab
+      mdTooltip="Not And"
+      mdTooltipPosition="above"><md-icon>remove</md-icon></button>
+  </ng-container>
   <md-card>
     <md-card-content>
       <md-icon>access_time</md-icon>      
