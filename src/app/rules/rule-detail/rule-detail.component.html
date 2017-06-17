@@ -1,0 +1,18 @@
+<md-card>
+  <md-card-header>
+    <div md-card-avatar>
+      <md-icon>link</md-icon>
+    </div>
+    <md-card-title>{{rule.name}}</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <ng-container
+      *ngFor="let condition of rule.conditions">
+      <app-temperature-condition
+        *ngIf="condition.type === 'temperature'"
+        [condition]="condition"
+        (saveCondition)="saveRule()">
+      </app-temperature-condition>
+    </ng-container>
+  </md-card-content>
+</md-card>

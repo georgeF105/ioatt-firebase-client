@@ -3,7 +3,9 @@
     <md-card-title>{{rule.name}}</md-card-title>
   </md-card-header>
   <md-card-content>
-    <ng-container
+    <app-rule-detail
+      [rule]="rule"></app-rule-detail>
+    <!--<ng-container
       *ngFor="let condition of rule.conditions">
       <app-temperature-condition
         *ngIf="condition.type === 'temperature'"
@@ -22,6 +24,6 @@
         *ngIf="condition.type === 'time'">
         <h3>{{condition.startTime  + ' - ' + condition.endTime}}</h3>
       </md-card-content>
-    </md-card>
+    </md-card>-->
   </md-card-content>
 </md-card>
