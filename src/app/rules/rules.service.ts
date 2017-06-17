@@ -16,4 +16,13 @@ export class RulesService {
   public saveRule(rule: IRule): void {
     this.angularFireDatabase.object(`rules/${rule.$key}`).set(rule);
   }
+
+  public getDevicesRule (deviceKey: string) {
+    return this.angularFireDatabase.list('rules', {
+      query: {
+        orderByChild: 'linkedDeviceKey',
+        equalTo: deviceKey
+      }
+    });
+  }
 }
