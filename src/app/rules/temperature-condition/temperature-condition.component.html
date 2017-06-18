@@ -7,8 +7,7 @@
       <md-icon
         class="type-icon"
         svgIcon="thermometer"></md-icon>
-      <md-input-container class="value-input-wrapper"
-        color="warn">
+      <md-input-container class="value-input-wrapper">
         <input
           class="value-input"
           mdInput
@@ -21,6 +20,13 @@
         <label
           mdSuffix>&deg;C</label>
       </md-input-container>
+      <div
+        class="layout-spacer"></div>
+      <button
+        md-button
+        (click)="deleteCondition()">
+        <md-icon>delete_forever</md-icon>
+      </button>
     </md-card-content>
   </md-card>
 </div>

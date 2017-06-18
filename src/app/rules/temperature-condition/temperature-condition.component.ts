@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { ITemperatureRuleCondition } from 'app/models';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -28,5 +28,9 @@ export class TemperatureConditionComponent implements OnInit {
 
   public onChange () {
     this.saveCondition.emit();
+  }
+
+  public deleteCondition () {
+    alert('DELETE. NOT FINISHED');
   }
 }
