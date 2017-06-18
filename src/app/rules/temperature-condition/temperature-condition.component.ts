@@ -21,16 +21,12 @@ export class TemperatureConditionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('Initing', this.condition);
     this.iconRegistry.addSvgIcon(
         'thermometer',
         this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/thermometer.svg'));
   }
 
   public onChange () {
-    console.log('saving');
-    console.log('isGroupTop', this.isGroupTop);
-    console.log('isGroupBottom', this.isGroupBottom);
     this.saveCondition.emit();
   }
 }

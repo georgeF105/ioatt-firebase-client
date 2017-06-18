@@ -54,18 +54,14 @@ export class ToggleButtonComponent implements OnChanges {
     if (this.selected) {
       if (this.deviceInSync) {
         this.buttonStateClass = ON_STATE_CLASS;
-        console.log('ON_STATE_CLASS');
       } else {
         this.buttonStateClass = TURNING_ON_STATE_CLASS;
-        console.log('TURNING_ON_STATE_CLASS');
       }
     } else {
       if (this.deviceInSync) {
         this.buttonStateClass = OFF_STATE_CLASS;
-        console.log('ON_STATE_CLASS');
       } else {
         this.buttonStateClass = TURNING_OFF_STATE_CLASS;
-        console.log('TURNING_OFF_STATE_CLASS');
       }
     }
 
