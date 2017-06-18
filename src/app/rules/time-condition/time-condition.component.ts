@@ -8,6 +8,8 @@ import { ITimeRuleCondition } from 'app/models';
 })
 export class TimeConditionComponent {
   @Input() public condition: ITimeRuleCondition;
+  @Input() public isGroupTop: boolean;
+  @Input() public isGroupBottom: boolean;
   @Output() public saveCondition = new EventEmitter();
 
   public onChange () {

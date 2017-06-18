@@ -1,26 +1,44 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IRule } from 'app/models';
 import { RulesService } from 'app/rules/rules.service';
+import { IRuleCondition } from 'app/models/IRuleCondition';
 
 @Component({
   selector: 'app-rule-detail',
   templateUrl: './rule-detail.component.html',
   styleUrls: ['./rule-detail.component.scss']
 })
-export class RuleDetailComponent implements OnInit {
+export class RuleDetailComponent implements OnChanges {
   @Input() public rule: IRule;
+
+  public conditionsGroupPosition: Array<{ isGroupTop: boolean, isGroupBottom: boolean }> = [];
 
   constructor(
     private rulesService: RulesService
   ) { }
 
-  ngOnInit() {
-    console.log('HERE???????');
+  ngOnChanges (changes: SimpleChanges) {
+    const { rule } = changes;
+    if (rule && rule.currentValue) {
+      this.setConditionsGroupPositions();
+    }
   }
 
   public saveRule (): void {
-    console.log('save rule', this.rule);
     this.rulesService.saveRule(this.rule);
+  }
+
+  public setConditionsGroupPositions () {
+    this.conditionsGroupPosition = (this.rule.conditions || []).map((condition, index, conditions) => {
+      return {
+        isGroupTop: index === 0
+          || condition.logicOperator === 'or'
+          || condition.logicOperator === 'xor',
+        isGroupBottom: !conditions[index + 1]
+          || conditions[index + 1].logicOperator === 'or'
+          || conditions[index + 1].logicOperator === 'xor'
+      };
+    });
   }
 
   public trackByKey (index, item) {

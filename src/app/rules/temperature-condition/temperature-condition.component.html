@@ -1,21 +1,8 @@
 <div
   class="temperature-conditon">
-  <ng-container
-    [ngSwitch]="condition.logicOperator">
-    <button
-      *ngSwitchCase="'and'"
-      class="logic-button"
-      md-mini-fab
-      mdTooltip="And"
-      mdTooltipPosition="above"><md-icon>add</md-icon></button>
-    <button
-      *ngSwitchCase="'xand'"
-      class="logic-button"
-      md-mini-fab
-      mdTooltip="Not And"
-      mdTooltipPosition="above"><md-icon>remove</md-icon></button>
-  </ng-container>
-  <md-card>
+  <md-card
+    [class.group-top]="isGroupTop"
+    [class.group-bottom]="isGroupBottom">
     <md-card-content>
       <md-icon
         class="type-icon"

@@ -9,10 +9,11 @@ import { IWeekDayRuleCondition } from 'app/models/IWeekDayRuleCondition';
 })
 export class WeekDayConditionComponent {
   @Input() public condition: IWeekDayRuleCondition;
+  @Input() public isGroupTop: boolean;
+  @Input() public isGroupBottom: boolean;
   @Output() public saveCondition = new EventEmitter();
 
   public onChange () {
-    console.log('saving', this.condition);
     this.saveCondition.emit();
   }
 

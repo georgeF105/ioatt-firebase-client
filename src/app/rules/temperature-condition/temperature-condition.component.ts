@@ -11,6 +11,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TemperatureConditionComponent implements OnInit {
   @Input() public condition: ITemperatureRuleCondition;
+  @Input() public isGroupTop: boolean;
+  @Input() public isGroupBottom: boolean;
   @Output() public saveCondition = new EventEmitter();
 
   constructor(
@@ -27,6 +29,8 @@ export class TemperatureConditionComponent implements OnInit {
 
   public onChange () {
     console.log('saving');
+    console.log('isGroupTop', this.isGroupTop);
+    console.log('isGroupBottom', this.isGroupBottom);
     this.saveCondition.emit();
   }
 }

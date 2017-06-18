@@ -4,13 +4,24 @@
 }
 
 md-card {
-  border-radius: 1rem;
+  padding: 1rem;
   flex-grow: 1;
 }
 
+.group-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.group-bottom {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
 .mat-card-content {
-    align-items: center;
-    display: flex;
+  min-height: 60px;
+  align-items: center;
+  display: flex;
 }
 
 .logic-button {
