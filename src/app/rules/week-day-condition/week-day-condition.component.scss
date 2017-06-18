@@ -41,3 +41,17 @@ md-card {
 .value-input {
   font-size: 22px;
 }
+
+.layout-spacer {
+  flex-grow: 1;
+}
+
+.logic-operators {
+  margin-left: 1rem;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem !important;
+}

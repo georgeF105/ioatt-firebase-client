@@ -15,4 +15,8 @@ export class TimeConditionComponent {
   public onChange () {
     this.saveCondition.emit();
   }
+
+  public deleteCondition () {
+    alert('DELETE. NOT FINISHED');
+  }
 }

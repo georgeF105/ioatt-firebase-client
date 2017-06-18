@@ -45,3 +45,13 @@ md-card {
 .layout-spacer {
   flex-grow: 1;
 }
+
+.logic-operators {
+  margin-left: 1rem;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem !important;
+}

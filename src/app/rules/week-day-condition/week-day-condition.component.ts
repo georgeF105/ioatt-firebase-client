@@ -21,4 +21,8 @@ export class WeekDayConditionComponent {
     this.condition[day] = !this.condition[day];
     this.onChange();
   }
+
+  public deleteCondition () {
+    alert('DELETE. NOT FINISHED');
+  }
 }

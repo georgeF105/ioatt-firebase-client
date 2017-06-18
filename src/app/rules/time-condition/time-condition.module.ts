@@ -7,6 +7,7 @@ import { MdIconModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdTooltipModule } from '@angular/material';
+import { MdButtonToggleModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { MdTooltipModule } from '@angular/material';
     MdIconModule,
     MdInputModule,
     MdButtonModule,
-    MdTooltipModule
+    MdTooltipModule,
+    MdButtonToggleModule
   ],
   declarations: [TimeConditionComponent],
   exports: [TimeConditionComponent]

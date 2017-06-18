@@ -16,6 +16,34 @@
         <md-button-toggle [value]="condition.saturday" [checked]="condition.saturday" (change)="toggleDay('saturday')">Sa</md-button-toggle>
         <md-button-toggle [value]="condition.sunday" [checked]="condition.sunday" (change)="toggleDay('sunday')">Su</md-button-toggle>
       </md-button-toggle-group>
+      <div
+        class="layout-spacer"></div>
+      <md-button-toggle
+        [checked]="settingsActive"
+        (change)="settingsActive = !settingsActive">
+        <md-icon>settings</md-icon>
+      </md-button-toggle>
     </md-card-content>
+    <md-card-actions
+      *ngIf="settingsActive">
+      <md-button-toggle-group
+        class="logic-operators"
+        [(ngModel)]="condition.logicOperator"
+        (ngModelChange)="onChange()">
+        <md-button-toggle
+          value="and">And</md-button-toggle>
+        <md-button-toggle
+          value="or">Or</md-button-toggle>
+        <md-button-toggle
+          value="xand">Not and</md-button-toggle>
+        <md-button-toggle
+          value="xor">Not or</md-button-toggle>
+      </md-button-toggle-group>
+      <button
+        md-button
+        (click)="deleteCondition()">
+        <md-icon>delete_forever</md-icon>
+      </button>
+    </md-card-actions>
   </md-card>
 </div>
