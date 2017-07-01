@@ -25,10 +25,13 @@ md-card {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.logic-button {
+.condition-icon {
   margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .type-icon {
@@ -44,6 +47,10 @@ md-card {
 }
 
 .logic-operators {
+  margin-left: 1rem;
+}
+
+.settings-button {
   margin-left: 1rem;
 }
 

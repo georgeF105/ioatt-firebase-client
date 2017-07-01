@@ -1,5 +1,9 @@
 .device-card {
-  margin: 1rem;
+  margin-top: 1rem;
+
+  @media (min-width: 500px) {
+    margin: 1rem;
+  }
 }
 
 .device-header {

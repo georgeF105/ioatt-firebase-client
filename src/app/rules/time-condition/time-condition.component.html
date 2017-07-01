@@ -4,7 +4,9 @@
     [class.group-top]="isGroupTop"
     [class.group-bottom]="isGroupBottom">
     <md-card-content>
-      <md-icon>access_time</md-icon>      
+      <md-icon
+        [class.settings-selected]="settingsActive"
+        (click)="settingsActive = !settingsActive">access_time</md-icon>      
       <md-input-container class="value-input-wrapper"
         color="warn">
         <input
@@ -25,13 +27,6 @@
           type="time"
           placeholder="end time">
       </md-input-container>
-      <div
-        class="layout-spacer"></div>
-      <md-button-toggle
-        [checked]="settingsActive"
-        (change)="settingsActive = !settingsActive">
-        <md-icon>settings</md-icon>
-      </md-button-toggle>
     </md-card-content>
     <md-card-actions
       *ngIf="settingsActive">

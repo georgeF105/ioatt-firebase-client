@@ -1,36 +1,27 @@
-<md-card>
-  <md-card-header>
-    <div md-card-avatar>
-      <md-icon>link</md-icon>
-    </div>
-    <md-card-title>{{rule?.name}}</md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <ng-container
-      *ngFor="let condition of rule?.conditions; trackBy: trackByKey; index as index">
-      <div
-        [ngSwitch]="condition.type"
-        [class.bottom-margin]="conditionsGroupPosition[index]?.isGroupBottom">
-        <app-temperature-condition
-          *ngSwitchCase="'temperature'"
-          [condition]="condition"
-          [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-          [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-          (saveCondition)="saveRule()">
-        </app-temperature-condition>
-        <app-time-condition
-          *ngSwitchCase="'time'"
-          [condition]="condition"
-          [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-          [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-          (saveCondition)="saveRule()"></app-time-condition>
-        <app-week-day-condition
-          *ngSwitchCase="'weekDay'"
-          [condition]="condition"
-          [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-          [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-          (saveCondition)="saveRule()"></app-week-day-condition>
-      </div>
-    </ng-container>
-  </md-card-content>
-</md-card>
+<md-icon>link</md-icon>
+<ng-container
+  *ngFor="let condition of rule?.conditions; trackBy: trackByKey; index as index">
+  <ng-container
+    [ngSwitch]="condition.type"
+    [class.bottom-margin]="conditionsGroupPosition[index]?.isGroupBottom">
+    <app-temperature-condition
+      *ngSwitchCase="'temperature'"
+      [condition]="condition"
+      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
+      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
+      (saveCondition)="saveRule()">
+    </app-temperature-condition>
+    <app-time-condition
+      *ngSwitchCase="'time'"
+      [condition]="condition"
+      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
+      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
+      (saveCondition)="saveRule()"></app-time-condition>
+    <app-week-day-condition
+      *ngSwitchCase="'weekDay'"
+      [condition]="condition"
+      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
+      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
+      (saveCondition)="saveRule()"></app-week-day-condition>
+  </ng-container>
+</ng-container>
