@@ -3,26 +3,26 @@
   <md-card
     [class.group-top]="isGroupTop"
     [class.group-bottom]="isGroupBottom">
-    <md-card-content>
-      <md-icon>date_range</md-icon>      
+    <md-card-content>  
+      <md-button-toggle
+        class="rule-button"
+        [checked]="settingsActive"
+        (change)="settingsActive = !settingsActive">
+        <md-icon>date_range</md-icon>
+      </md-button-toggle> 
       <md-button-toggle-group
         class="value-input-wrapper"
         multiple>
         <md-button-toggle [value]="condition.monday" [checked]="condition.monday" (change)="toggleDay('monday')">M</md-button-toggle>
-        <md-button-toggle [value]="condition.tuesday" [checked]="condition.tuesday" (change)="toggleDay('tuesday')">Tu</md-button-toggle>
+        <md-button-toggle [value]="condition.tuesday" [checked]="condition.tuesday" (change)="toggleDay('tuesday')">T</md-button-toggle>
         <md-button-toggle [value]="condition.wednesday" [checked]="condition.wednesday" (change)="toggleDay('wednesday')">W</md-button-toggle>
-        <md-button-toggle [value]="condition.thursday" [checked]="condition.thursday" (change)="toggleDay('thursday')">Th</md-button-toggle>
+        <md-button-toggle [value]="condition.thursday" [checked]="condition.thursday" (change)="toggleDay('thursday')">T</md-button-toggle>
         <md-button-toggle [value]="condition.friday" [checked]="condition.friday" (change)="toggleDay('friday')">F</md-button-toggle>
-        <md-button-toggle [value]="condition.saturday" [checked]="condition.saturday" (change)="toggleDay('saturday')">Sa</md-button-toggle>
-        <md-button-toggle [value]="condition.sunday" [checked]="condition.sunday" (change)="toggleDay('sunday')">Su</md-button-toggle>
+        <md-button-toggle [value]="condition.saturday" [checked]="condition.saturday" (change)="toggleDay('saturday')">S</md-button-toggle>
+        <md-button-toggle [value]="condition.sunday" [checked]="condition.sunday" (change)="toggleDay('sunday')">S</md-button-toggle>
       </md-button-toggle-group>
       <div
         class="layout-spacer"></div>
-      <md-button-toggle
-        [checked]="settingsActive"
-        (change)="settingsActive = !settingsActive">
-        <md-icon>settings</md-icon>
-      </md-button-toggle>
     </md-card-content>
     <md-card-actions
       *ngIf="settingsActive">

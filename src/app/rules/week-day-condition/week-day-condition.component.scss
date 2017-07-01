@@ -24,6 +24,7 @@ md-card {
     min-height: 60px;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .logic-button {
@@ -32,10 +33,6 @@ md-card {
 
 .type-icon {
   margin-right: 1rem;
-}
-
-.value-input-wrapper {
-  margin-left: 1rem;
 }
 
 .value-input {
@@ -48,6 +45,26 @@ md-card {
 
 .logic-operators {
   margin-left: 1rem;
+}
+
+.value-input-wrapper {
+  .mat-button-toggle-label-content {
+    padding: 0 10px;
+  }
+}
+
+.rule-button {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  md-icon {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.mat-button-toggle-label-content {
+  padding: 0;
 }
 
 .mat-card-actions {
