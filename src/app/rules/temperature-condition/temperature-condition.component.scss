@@ -1,0 +1,57 @@
+.temperature-conditon {
+  display: flex;
+  align-items: center;
+}
+
+md-card {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.group-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+.group-bottom {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom: none;
+}
+
+.mat-card-content {
+  min-height: 60px;
+  align-items: center;
+  display: flex;
+}
+
+.logic-button {
+  margin-right: 1rem;
+}
+
+.type-icon {
+  margin-right: 1rem;
+}
+
+.value-input-wrapper {
+  margin-left: 1rem;
+}
+
+.value-input {
+  font-size: 1rem;
+}
+
+.layout-spacer {
+  flex-grow: 1;
+}
+
+.logic-operators {
+  margin-left: 1rem;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem !important;
+}

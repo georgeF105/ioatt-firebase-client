@@ -1,4 +1,12 @@
 .device-card {
+  margin-top: 1rem;
+
+  @media (min-width: 500px) {
+    margin: 1rem;
+  }
+}
+
+.device-header {
   margin: 20px;
   display: flex;
   justify-content: space-between;

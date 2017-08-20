@@ -7,6 +7,7 @@ import { DeviceCardComponent } from './device-card/device-card.component';
 import { MaterialModule } from '@angular/material';
 import { DevicesService } from './devices.service';
 import { DevicesListModule } from './devices-list/devices-list.module';
+import { RulesService } from 'app/rules/rules.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import { DevicesListModule } from './devices-list/devices-list.module';
   declarations: [
     DevicesComponent
   ],
-  providers: [DevicesService]
+  providers: [
+    DevicesService,
+    RulesService
+  ]
 })
 export class DevicesModule { }

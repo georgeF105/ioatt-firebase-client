@@ -1,9 +1,11 @@
 import { ITemperatureRuleCondition } from './ITemperatureRuleCondition';
 import { ITimeRuleCondition } from './ITimeRuleCondition';
+import { IWeekDayRuleCondition } from './IWeekDayRuleCondition';
 
 export interface IRule {
+  $key: string;
   active: boolean;
-  conditions: ITemperatureRuleCondition | ITimeRuleCondition;
+  conditions: Array<ITemperatureRuleCondition | ITimeRuleCondition | IWeekDayRuleCondition>;
   linkedDeviceKey: string;
   name: string;
 }

@@ -1,0 +1,86 @@
+.week-day-conditon {
+  display: flex;
+  align-items: center;
+}
+
+md-card {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.group-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+.group-bottom {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom: none;
+}
+
+.mat-card-content {
+    min-height: 60px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.condition-icon {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.type-icon {
+  margin-right: 1rem;
+}
+
+.value-input {
+  font-size: 22px;
+}
+
+.layout-spacer {
+  flex-grow: 1;
+}
+
+.logic-operators {
+  margin-left: 1rem;
+}
+
+.settings-button {
+  margin-left: 1rem;
+}
+
+.value-input-wrapper {
+  .mat-button-toggle-label-content {
+    padding: 0 10px;
+  }
+}
+
+.weekday-button {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+.rule-button {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  md-icon {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.mat-button-toggle-label-content {
+  padding: 0;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem !important;
+}
