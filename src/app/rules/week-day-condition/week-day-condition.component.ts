@@ -13,6 +13,8 @@ export class WeekDayConditionComponent {
   @Input() public isGroupBottom: boolean;
   @Output() public saveCondition = new EventEmitter();
 
+  public settingsActive: boolean;
+
   public onChange () {
     this.saveCondition.emit();
   }

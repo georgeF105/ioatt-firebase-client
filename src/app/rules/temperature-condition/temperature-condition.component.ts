@@ -15,6 +15,8 @@ export class TemperatureConditionComponent implements OnInit {
   @Input() public isGroupBottom: boolean;
   @Output() public saveCondition = new EventEmitter();
 
+  public settingsActive: boolean;
+
   constructor(
     private iconRegistry: MdIconRegistry,
     private sanitizer: DomSanitizer
