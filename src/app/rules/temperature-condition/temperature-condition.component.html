@@ -22,6 +22,10 @@
         <label
           mdSuffix>&deg;C</label>
       </md-input-container>
+      <span class="spacer"></span>
+      <h3 class="actualValue">
+        {{ actualValue$ | async }}
+      </h3>
     </md-card-content>
     <md-card-actions
       *ngIf="settingsActive">
