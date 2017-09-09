@@ -5,6 +5,7 @@ import { MdButtonModule } from '@angular/material';
 import { MdToolbarModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MdMenuModule } from '@angular/material';
     MdButtonModule,
     MdToolbarModule,
     MdIconModule,
-    MdMenuModule
+    MdMenuModule,
+    RouterModule
   ],
   declarations: [NavbarComponent],
   exports: [NavbarComponent]

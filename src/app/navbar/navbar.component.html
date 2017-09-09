@@ -1,7 +1,11 @@
 <md-toolbar
   class="navbar">
-  <md-icon
-    svgIcon="home-icon"></md-icon>
+  <a
+    routerLink="/"
+    md-icon-button>
+    <md-icon
+      svgIcon="home-icon"></md-icon>
+  </a>
   <span class="spacer"></span>  
   <span>
     {{ title$ | async }}
@@ -12,7 +16,10 @@
     [mdMenuTriggerFor]="menu">
     <md-icon>menu</md-icon>
   </button>
-  <md-menu #menu="mdMenu">
+  <md-menu
+    #menu="mdMenu"
+    [xPosition]="'after'"
+    [overlapTrigger]="false">
     <button md-menu-item disabled>
       <md-icon>settings</md-icon>
       <span>Settings</span>
