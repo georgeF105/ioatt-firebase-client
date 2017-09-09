@@ -28,7 +28,6 @@ import { ToggleButtonComponent } from './core/toggle-button/toggle-button.compon
     AppRoutingModule,
     BrowserAnimationsModule,
     NavbarModule,
-    MdButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule

@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { ITemperatureRuleCondition } from 'app/models';
-import { MdIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
 import { RulesService } from 'app/rules/rules.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -22,16 +20,10 @@ export class TemperatureConditionComponent implements OnInit {
   public settingsActive: boolean;
 
   constructor(
-    private iconRegistry: MdIconRegistry,
-    private sanitizer: DomSanitizer,
     private rulesService: RulesService
   ) { }
 
   ngOnInit() {
-    this.iconRegistry.addSvgIcon(
-        'thermometer',
-        this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/thermometer.svg'));
-
     this.actualValue$ = this.rulesService.getRuleSensorValue(this.condition);
   }
 

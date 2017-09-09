@@ -9,6 +9,7 @@ import { UserService } from '../core/user/user.service';
 })
 export class NavbarComponent implements OnInit {
   public user$: Observable<any>;
+  public title$: Observable<string>;
 
   constructor(
     private userService: UserService
@@ -16,6 +17,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this.userService.getUser();
+
+    this.title$ = this.user$
+      .map(user => `Hi ${user.name}`)
+      .startWith('Logging in...');
   }
 
   public logIn(): void {
