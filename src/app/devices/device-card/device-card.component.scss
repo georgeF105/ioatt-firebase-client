@@ -1,9 +1,6 @@
-.device-card {
-  margin-top: 1rem;
-
-  @media (min-width: 500px) {
-    margin: 1rem;
-  }
+.device-detail-block {
+  margin: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .device-header {
@@ -14,4 +11,8 @@
 
 .loading-button {
   background-color: #808080;
+}
+
+.device-card {
+  margin-bottom: 0.25rem;
 }

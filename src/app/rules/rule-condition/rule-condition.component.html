@@ -1,0 +1,25 @@
+<md-card
+  [class.group-top]="isGroupTop"
+  [class.group-bottom]="isGroupBottom">
+  <ng-container
+    [ngSwitch]="condition.type"
+    [class.group-top]="isGroupTop"
+    [class.group-bottom]="isGroupBottom">
+  <app-temperature
+    class="condition"
+    *ngSwitchCase="'temperature'"
+    [condition]="condition"
+    (saveCondition)="saveRule()">
+  </app-temperature>
+  <app-time
+    class="condition"
+    *ngSwitchCase="'time'"
+    [condition]="condition"
+    (saveCondition)="saveRule()"></app-time>
+  <app-week-day
+    class="condition"
+    *ngSwitchCase="'weekDay'"
+    [condition]="condition"
+    (saveCondition)="saveRule()"></app-week-day>
+  </ng-container>
+</md-card>

@@ -1,27 +1,8 @@
-<md-icon>link</md-icon>
 <ng-container
   *ngFor="let condition of rule?.conditions; trackBy: trackByKey; index as index">
-  <ng-container
-    [ngSwitch]="condition.type"
-    [class.bottom-margin]="conditionsGroupPosition[index]?.isGroupBottom">
-    <app-temperature-condition
-      *ngSwitchCase="'temperature'"
-      [condition]="condition"
-      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-      (saveCondition)="saveRule()">
-    </app-temperature-condition>
-    <app-time-condition
-      *ngSwitchCase="'time'"
-      [condition]="condition"
-      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-      (saveCondition)="saveRule()"></app-time-condition>
-    <app-week-day-condition
-      *ngSwitchCase="'weekDay'"
-      [condition]="condition"
-      [isGroupTop]="conditionsGroupPosition[index]?.isGroupTop"
-      [isGroupBottom]="conditionsGroupPosition[index]?.isGroupBottom"
-      (saveCondition)="saveRule()"></app-week-day-condition>
-  </ng-container>
+  <app-rule-condition
+    [condition]="condition"
+    [isGroupBottom]="conditionsGroupPosition[index].isGroupBottom"
+    [isGroupTop]="conditionsGroupPosition[index].isGroupTop"
+    (saveCondition)="saveRule()"></app-rule-condition>
 </ng-container>
