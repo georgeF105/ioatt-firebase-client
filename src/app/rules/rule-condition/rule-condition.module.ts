@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TimeConditionComponent } from './time-condition.component';
+import { RuleConditionComponent } from './rule-condition.component';
+import { TemperatureComponent } from './temperature/temperature.component';
+import { TimeComponent } from './time/time.component';
+import { WeekDayComponent } from './week-day/week-day.component';
+
 import { MdCardModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdTooltipModule } from '@angular/material';
 import { MdButtonToggleModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -20,7 +24,7 @@ import { MdButtonToggleModule } from '@angular/material';
     MdTooltipModule,
     MdButtonToggleModule
   ],
-  declarations: [TimeConditionComponent],
-  exports: [TimeConditionComponent]
+  declarations: [RuleConditionComponent, TemperatureComponent, TimeComponent, WeekDayComponent],
+  exports: [RuleConditionComponent]
 })
-export class TimeConditionModule { }
+export class RuleConditionModule { }

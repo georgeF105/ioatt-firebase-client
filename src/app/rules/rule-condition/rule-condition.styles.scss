@@ -1,0 +1,41 @@
+.condition {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.group-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+.group-bottom {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom: none;
+}
+
+.logic-button {
+  margin-right: 1rem;
+}
+
+.value-input-wrapper, .content-wrapper {
+  margin: 0.5rem;
+}
+
+md-input-container.value-input-wrapper {
+  width: 5rem;
+}
+
+.value-input {
+  font-size: 1rem;
+}
+
+.type-icon {
+  margin: 0.5rem;
+}

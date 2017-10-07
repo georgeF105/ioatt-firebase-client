@@ -1,5 +1,7 @@
-<div class="button-border" [ngClass]="buttonStateClass">
-  <button
-    (click)="toggleSelected()"
-     md-fab><md-icon>power_settings_new</md-icon></button>
-</div>
+<button
+  [ngClass]="buttonStateClass"
+  (click)="toggleSelected()"
+  primary
+  md-fab>
+  <md-icon>power_settings_new</md-icon>
+</button>

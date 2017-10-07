@@ -1,0 +1,21 @@
+<md-icon class="type-icon">access_time</md-icon>      
+<md-input-container class="value-input-wrapper"
+color="warn">
+<input
+  class="value-input"
+  mdInput
+  [(ngModel)]="condition.startTime"
+  (ngModelChange)="saveCondition.emit()"
+  type="time"
+  placeholder="start time">
+</md-input-container>
+<md-input-container class="value-input-wrapper"
+color="warn">
+<input
+  class="value-input"
+  mdInput
+  [(ngModel)]="condition.endTime"
+  (ngModelChange)="saveCondition.emit()"
+  type="time"
+  placeholder="end time">
+</md-input-container>

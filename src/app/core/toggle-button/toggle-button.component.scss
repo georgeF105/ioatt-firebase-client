@@ -1,12 +1,18 @@
+@import '~@angular/material/theming';
+
+$button-glow-color: #03a9f4;
+
 button {
   margin: 10px;
-  box-shadow: none;
-}
-
-.button-border {
-  border-radius: 50%;
+  // box-shadow: none;
+  background-color: #78909c !important;
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
+
+// .button-border {
+//   border-radius: 50%;
+//   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+// }
 
 .button-is-on {
   // background-color: rgba(81, 203, 238, 1);
@@ -15,7 +21,7 @@ button {
   // -ms-transition: all 0.30s ease-in-out;
   // -o-transition: all 0.30s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-  box-shadow: inset 0 0 10px 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 10px 5px $button-glow-color;
 }
 
 .button-is-off {
@@ -29,7 +35,7 @@ button {
   // }
   // animation:spin 4s linear infinite;
   // animation: glow 800ms ease-out infinite alternate;
-  // box-shadow: inset 10px 0 10px 5px rgba(81, 203, 238, 1);
+  // box-shadow: inset 10px 0 10px 5px $button-glow-color;
   animation: glow 2s ease-in infinite;
 }
 
@@ -38,7 +44,6 @@ button {
   //   transition: box-shadow 0.5s ease-in-out;
   //   box-shadow: 0 0 10px 5px red;
   // }
-  
   animation: glow 2s ease-in-out infinite reverse;
 }
 
@@ -51,9 +56,9 @@ button {
 
 @keyframes glow {
     0% {
-  		box-shadow: inset 0 0 10px 5px rgba(81, 203, 238, 1);
+  		box-shadow: 0 0 10px 5px $button-glow-color;
     }	
     100% {
-		  box-shadow: inset 0 0 5px 1px rgba(81, 203, 238, 1);
+		  box-shadow: 0 0 5px 1px $button-glow-color;
     }
 }

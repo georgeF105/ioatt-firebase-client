@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { IRule } from 'app/models';
+import { IRule, ITemperatureRuleCondition } from 'app/models';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RulesService {
@@ -24,5 +25,10 @@ export class RulesService {
         equalTo: deviceKey
       }
     });
+  }
+
+  public getRuleSensorValue (rule: ITemperatureRuleCondition): Observable<number> {
+    return this.angularFireDatabase.object(`sensors/${rule.sensorKey}/data`)
+      .map(data => data[rule.sensorDataKey]);
   }
 }

@@ -1,27 +1,15 @@
-<md-card
-  class="device-card">
-  <div
-    class="device-header">
-    <h1>{{device.name}}</h1>
-    <app-toggle-button
-      [selected]="device.state"
-      [deviceInSync]="!device.updatedByHost"
-      (onSelectedChange)="setDeviceState($event)"></app-toggle-button>
-  </div>
-  <md-card-content>
-    <app-rule-detail
-      [rule]="deviceRule$ | async"></app-rule-detail>
-  </md-card-content>
-  <!--<button
-    *ngIf="device.state"
-    [ngClass]="{'loading-button': device.updated}"
-    (click)="toggleDeviceState()"
-    color="primary"    
-    md-fab><md-icon>check</md-icon></button>
-  <button
-    *ngIf="!device.state"
-    [ngClass]="{'loading-button': device.updated}"    
-    (click)="toggleDeviceState()"
-    color="warn"
-    md-fab><md-icon>close</md-icon></button>-->
-</md-card>
+<div class="device-detail-block">
+  <md-card
+    class="device-card">
+    <div
+      class="device-header">
+      <h2>{{device.name}}</h2>
+      <app-toggle-button
+        [selected]="device.state"
+        [deviceInSync]="!device.updatedByHost"
+        (onSelectedChange)="setDeviceState($event)"></app-toggle-button>
+    </div>
+  </md-card>
+  <app-rule-detail
+    [rule]="deviceRule$ | async"></app-rule-detail>
+</div>

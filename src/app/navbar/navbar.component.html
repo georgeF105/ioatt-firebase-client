@@ -1,13 +1,43 @@
 <md-toolbar
   class="navbar">
-  <span>Home Control</span>
+  <a
+    routerLink="/"
+    md-icon-button>
+    <md-icon
+      svgIcon="home-icon"></md-icon>
+  </a>
+  <span class="spacer"></span>  
+  <span>
+    {{ title$ | async }}
+  </span>
   <span class="spacer"></span>
   <button
+    md-icon-button
+    [mdMenuTriggerFor]="menu">
+    <md-icon>menu</md-icon>
+  </button>
+  <md-menu
+    #menu="mdMenu"
+    [xPosition]="'after'"
+    [overlapTrigger]="false">
+    <button md-menu-item disabled>
+      <md-icon>settings</md-icon>
+      <span>Settings</span>
+    </button>
+    <button
+      (click)="logOut()"
+      md-menu-item>
+      <md-icon>lock_open</md-icon>
+      <span>Log Out</span>
+    </button>
+  </md-menu>
+
+  <!-- <button
     *ngIf="!(user$ | async)"
     md-button
     (click)="logIn()">LogIn</button>
   <button
     *ngIf="user$ | async"
     md-button
-    (click)="logOut()">{{(user$ | async)?.name}}</button>
+    (click)="logOut()">{{(user$ | async)?.name}}</button> -->
 </md-toolbar>
