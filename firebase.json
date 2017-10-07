@@ -6,6 +6,10 @@
     "public": "dist",
     "rewrites": [
       {
+        "source": "/build/**",
+        "function": "app"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
